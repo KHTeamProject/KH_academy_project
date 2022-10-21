@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1,
-    "scrollLeft": 0,
+    "scrollTop": 0,
+    "scrollLeft": -2,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -91,48 +91,9 @@
               "widthDefault": 60
             },
             "id": "4ac65375-caba-4868-a05b-59b727360e2c"
-          }
-        ],
-        "ui": {
-          "active": false,
-          "left": 8,
-          "top": 165,
-          "zIndex": 24,
-          "widthName": 60,
-          "widthComment": 60
-        },
-        "visible": true,
-        "id": "6d36dae2-6507-493b-8f4d-e290f5d28245"
-      },
-      {
-        "name": "SURVEY",
-        "comment": "",
-        "columns": [
-          {
-            "name": "QUESTION_ID",
-            "comment": "",
-            "dataType": "VARCHAR",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 83.78955078125,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "3dae71fd-5b0d-49a2-83e7-0cc73be7f017"
           },
           {
-            "name": "QUESTION",
+            "name": "USER_NAME",
             "comment": "",
             "dataType": "VARCHAR",
             "default": "",
@@ -147,13 +108,29 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 65.41943359375,
+              "widthName": 75.52490234375,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "dc4707a1-3353-4806-9346-641602a74c34"
-          },
+            "id": "59910e59-8888-4bcf-a99e-1a6a477d68f8"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 4,
+          "top": 148,
+          "zIndex": 80,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "6d36dae2-6507-493b-8f4d-e290f5d28245"
+      },
+      {
+        "name": "SURVEY",
+        "comment": "",
+        "columns": [
           {
             "name": "ANSWER_ID",
             "comment": "",
@@ -176,13 +153,36 @@
               "widthDefault": 60
             },
             "id": "bdb75142-1fa0-430f-9d4f-f95b5b22b27d"
+          },
+          {
+            "name": "QUESTION_ID",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 83.78955078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1a7341e2-1fca-4b3a-b186-98fdfe87255e"
           }
         ],
         "ui": {
           "active": false,
-          "left": 492,
-          "top": 478,
-          "zIndex": 37,
+          "left": 473,
+          "top": 579,
+          "zIndex": 88,
           "widthName": 60,
           "widthComment": 60
         },
@@ -242,9 +242,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1,
-          "top": 494,
-          "zIndex": 35,
+          "left": 0,
+          "top": 582,
+          "zIndex": 90,
           "widthName": 60,
           "widthComment": 60
         },
@@ -255,29 +255,6 @@
         "name": "USERS_ANSWER",
         "comment": "",
         "columns": [
-          {
-            "name": "QUESTION_ID",
-            "comment": "",
-            "dataType": "VARCHAR",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 83.78955078125,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "1b008d7e-4929-47ca-bcc4-906dfa11a48a"
-          },
           {
             "name": "USER_ID",
             "comment": "",
@@ -302,7 +279,92 @@
             "id": "63422228-a684-4d6a-bf23-8c8811153228"
           },
           {
-            "name": "USER_ANSWER",
+            "name": "QUESTION_ID",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 83.78955078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d8dc3c83-693b-4100-bffd-3e4c75b8e85d"
+          },
+          {
+            "name": "USERS_ANSWER",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 98.04638671875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5169f185-6c2d-48fb-a4f0-fa007a0a3449"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 459,
+          "top": 101,
+          "zIndex": 98,
+          "widthName": 98.04638671875,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "a30296b8-f20d-4b85-b4bd-664ec5c26059"
+      },
+      {
+        "name": "QUESTION",
+        "comment": "",
+        "columns": [
+          {
+            "name": "QUESTION_ID",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.78955078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e313a357-0cea-48b1-8939-8af80f618f00"
+          },
+          {
+            "name": "QUESTION",
             "comment": "",
             "dataType": "VARCHAR",
             "default": "",
@@ -317,24 +379,24 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 90.98779296875,
+              "widthName": 65.41943359375,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "0d13c36a-6ea0-4586-92af-5609f188c308"
+            "id": "f32f5e34-36cc-4048-82c9-d934c4c9bfc2"
           }
         ],
         "ui": {
           "active": false,
-          "left": 475,
-          "top": 146,
-          "zIndex": 39,
-          "widthName": 98.04638671875,
+          "left": 474,
+          "top": 337,
+          "zIndex": 91,
+          "widthName": 65.41943359375,
           "widthComment": 60
         },
         "visible": true,
-        "id": "a30296b8-f20d-4b85-b4bd-664ec5c26059"
+        "id": "5574d0e6-01b2-45fc-af69-57f0b878088b"
       }
     ],
     "indexes": []
@@ -353,8 +415,8 @@
           "columnIds": [
             "1abfec4e-dfdd-4609-ab49-4a5819190da2"
           ],
-          "x": 360.9794921875,
-          "y": 549,
+          "x": 359.9794921875,
+          "y": 637,
           "direction": "right"
         },
         "end": {
@@ -362,8 +424,8 @@
           "columnIds": [
             "bdb75142-1fa0-430f-9d4f-f95b5b22b27d"
           ],
-          "x": 492,
-          "y": 543.25,
+          "x": 473,
+          "y": 634,
           "direction": "left"
         },
         "constraintName": "fk_answer_to_survey",
@@ -375,38 +437,12 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "26622d0e-ae50-4983-8224-5206841f7232",
-          "columnIds": [
-            "3dae71fd-5b0d-49a2-83e7-0cc73be7f017"
-          ],
-          "x": 677.394775390625,
-          "y": 478,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "a30296b8-f20d-4b85-b4bd-664ec5c26059",
-          "columnIds": [
-            "1b008d7e-4929-47ca-bcc4-906dfa11a48a"
-          ],
-          "x": 663.993896484375,
-          "y": 276.5,
-          "direction": "bottom"
-        },
-        "constraintName": "fk_survey_to_users_answer",
-        "visible": true,
-        "id": "7a392a2e-cadc-441a-876e-06f697534873"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
           "tableId": "6d36dae2-6507-493b-8f4d-e290f5d28245",
           "columnIds": [
             "38de5353-266d-4897-a6e3-2e6854676065"
           ],
-          "x": 355,
-          "y": 220,
+          "x": 366.52490234375,
+          "y": 213.25,
           "direction": "right"
         },
         "end": {
@@ -414,13 +450,65 @@
           "columnIds": [
             "63422228-a684-4d6a-bf23-8c8811153228"
           ],
-          "x": 475,
-          "y": 211.25,
+          "x": 459,
+          "y": 166.25,
           "direction": "left"
         },
         "constraintName": "fk_users_to_users_answer",
         "visible": true,
         "id": "4615f079-227d-41f2-a073-5b6c14e96c12"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "5574d0e6-01b2-45fc-af69-57f0b878088b",
+          "columnIds": [
+            "e313a357-0cea-48b1-8939-8af80f618f00"
+          ],
+          "x": 659.394775390625,
+          "y": 447,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "26622d0e-ae50-4983-8224-5206841f7232",
+          "columnIds": [
+            "1a7341e2-1fca-4b3a-b186-98fdfe87255e"
+          ],
+          "x": 658.394775390625,
+          "y": 579,
+          "direction": "top"
+        },
+        "constraintName": "fk_question_to_survey",
+        "visible": true,
+        "id": "043675e9-a2f8-4fd8-a1fc-ab91795ff337"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "5574d0e6-01b2-45fc-af69-57f0b878088b",
+          "columnIds": [
+            "e313a357-0cea-48b1-8939-8af80f618f00"
+          ],
+          "x": 659.394775390625,
+          "y": 337,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "a30296b8-f20d-4b85-b4bd-664ec5c26059",
+          "columnIds": [
+            "d8dc3c83-693b-4100-bffd-3e4c75b8e85d"
+          ],
+          "x": 651.523193359375,
+          "y": 231.5,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_question_to_users_answer",
+        "visible": true,
+        "id": "21b488e6-7bc5-48a4-bf4a-52cab04ad98c"
       }
     ]
   }
