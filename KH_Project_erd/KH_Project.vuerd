@@ -1,0 +1,476 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "USERS",
+        "comment": "",
+        "columns": [
+          {
+            "name": "USER_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "38de5353-266d-4897-a6e3-2e6854676065"
+          },
+          {
+            "name": "USER_PW",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4ac65375-caba-4868-a05b-59b727360e2c"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1,
+          "top": 299,
+          "zIndex": 27,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "6d36dae2-6507-493b-8f4d-e290f5d28245"
+      },
+      {
+        "name": "SURVEY",
+        "comment": "",
+        "columns": [
+          {
+            "name": "QUESTION_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.78955078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3dae71fd-5b0d-49a2-83e7-0cc73be7f017"
+          },
+          {
+            "name": "QUESTION",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.41943359375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "dc4707a1-3353-4806-9346-641602a74c34"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8143277d-e1bf-4002-8358-69bad6589bca"
+          },
+          {
+            "name": "ANSWER_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 72.9794921875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bdb75142-1fa0-430f-9d4f-f95b5b22b27d"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 570,
+          "top": 328,
+          "zIndex": 36,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "26622d0e-ae50-4983-8224-5206841f7232"
+      },
+      {
+        "name": "ANSWER",
+        "comment": "",
+        "columns": [
+          {
+            "name": "ANSWER_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.9794921875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1abfec4e-dfdd-4609-ab49-4a5819190da2"
+          },
+          {
+            "name": "ANSWER",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0f21eed9-fcf2-43c0-a4b7-74b43d5e3caa"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 82,
+          "top": 466,
+          "zIndex": 26,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "ac920eb2-6b2e-401c-9445-457c2eb50af5"
+      },
+      {
+        "name": "USERS_ANSWER",
+        "comment": "",
+        "columns": [
+          {
+            "name": "QUESTION_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 83.78955078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1b008d7e-4929-47ca-bcc4-906dfa11a48a"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "63422228-a684-4d6a-bf23-8c8811153228"
+          },
+          {
+            "name": "USER_ANSWER",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.98779296875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0d13c36a-6ea0-4586-92af-5609f188c308"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 369,
+          "top": 120,
+          "zIndex": 35,
+          "widthName": 98.04638671875,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "a30296b8-f20d-4b85-b4bd-664ec5c26059"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "6d36dae2-6507-493b-8f4d-e290f5d28245",
+          "columnIds": [
+            "38de5353-266d-4897-a6e3-2e6854676065"
+          ],
+          "x": 348,
+          "y": 381.5,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "26622d0e-ae50-4983-8224-5206841f7232",
+          "columnIds": [
+            "8143277d-e1bf-4002-8358-69bad6589bca"
+          ],
+          "x": 570,
+          "y": 441.25,
+          "direction": "left"
+        },
+        "constraintName": "fk_users_to_survey",
+        "visible": true,
+        "id": "1ddd043e-b301-47b3-9b6f-137e13219cb6"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "ac920eb2-6b2e-401c-9445-457c2eb50af5",
+          "columnIds": [
+            "1abfec4e-dfdd-4609-ab49-4a5819190da2"
+          ],
+          "x": 441.9794921875,
+          "y": 521,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "26622d0e-ae50-4983-8224-5206841f7232",
+          "columnIds": [
+            "bdb75142-1fa0-430f-9d4f-f95b5b22b27d"
+          ],
+          "x": 570,
+          "y": 365.75,
+          "direction": "left"
+        },
+        "constraintName": "fk_answer_to_survey",
+        "visible": true,
+        "id": "60f6718a-be7d-4e1b-98a4-60cb6f546c1f"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "26622d0e-ae50-4983-8224-5206841f7232",
+          "columnIds": [
+            "3dae71fd-5b0d-49a2-83e7-0cc73be7f017"
+          ],
+          "x": 755.394775390625,
+          "y": 328,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "a30296b8-f20d-4b85-b4bd-664ec5c26059",
+          "columnIds": [
+            "1b008d7e-4929-47ca-bcc4-906dfa11a48a"
+          ],
+          "x": 746.98779296875,
+          "y": 185.25,
+          "direction": "right"
+        },
+        "constraintName": "fk_survey_to_users_answer",
+        "visible": true,
+        "id": "7a392a2e-cadc-441a-876e-06f697534873"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "6d36dae2-6507-493b-8f4d-e290f5d28245",
+          "columnIds": [
+            "38de5353-266d-4897-a6e3-2e6854676065"
+          ],
+          "x": 348,
+          "y": 326.5,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "a30296b8-f20d-4b85-b4bd-664ec5c26059",
+          "columnIds": [
+            "63422228-a684-4d6a-bf23-8c8811153228"
+          ],
+          "x": 369,
+          "y": 185.25,
+          "direction": "left"
+        },
+        "constraintName": "fk_users_to_users_answer",
+        "visible": true,
+        "id": "4615f079-227d-41f2-a073-5b6c14e96c12"
+      }
+    ]
+  }
+}
