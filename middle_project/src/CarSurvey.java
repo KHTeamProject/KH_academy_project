@@ -10,9 +10,6 @@ public class CarSurvey { // 설문 및 아이디 비번
 
     public void Survey(Connection conn) {
 
-        // query문 기본값 생성
-        String query = "";
-
         // id 기본값 생성
         String id = "";
 
@@ -44,7 +41,7 @@ public class CarSurvey { // 설문 및 아이디 비번
             pstmt.setString(1, id);
             pstmt.setString(2, pw);
 
-            int count = pstmt.executeUpdate();
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             // e.printStackTrace();
             return true;
@@ -85,7 +82,7 @@ public class CarSurvey { // 설문 및 아이디 비번
                 pstmt.setString(2, queid);
                 pstmt.setString(3, ansid);
 
-                int qcount = pstmt.executeUpdate();
+                pstmt.executeUpdate();
             }
         } catch (Exception e) {
             e.printStackTrace();
