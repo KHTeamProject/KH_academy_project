@@ -1,4 +1,8 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 
@@ -14,17 +18,61 @@ public class CarStats { //통계 김용범
                 
                 //아래는 예시
                 System.out.println("<ID별 답변 결과>");
-                System.out.println();
-                System.out.println("ID)             질문(1)     질문(2)     질문(3)     질문(4)     질문(5)     질문(6)");
+                String format = "%-10s%-10s%-10s%-10s%-10s%-10s%-10s%n";
+                System.out.printf(format,"ID)","질문(1)","질문(2)","질문(3)","질문(4)","질문(5)","질문(6)");
                 
-                // 반복문을 통해서 id조회한 값들을 프린트 하면서 동시에 답변한 내용도 조회해서 옆에 같이 표시하기
-                //while() {
+                try {
+                    String query = "SELECT USER_ID FROM users";
+                    Statement statement = conn.createStatement();
+                    ResultSet resultSet;
+                    resultSet = statement.executeQuery(query);
 
-                //}
-                System.out.println("USER ID(1)       3           2           4           1              5          3");
-                System.out.println("USER ID(2)       1           2           4           3              5          3");
-                System.out.println("USER ID(3)       2           1           4           3              5          3");
-                System.out.println("USER ID(4)       4           3           1           2              5          3");
+                    String query_answer = "SELECT ANSWER_ID FROM users_answer WHERE USER_ID = ? ORDER BY QUESTION_ID";
+                    PreparedStatement pstmt = conn.prepareStatement(query_answer);
+                    
+                    // 반복문을 통해서 id조회한 값들을 프린트 하면서 동시에 답변한 내용도 조회해서 옆에 같이 표시하기
+                    while(resultSet.next()) {
+                        String userId = resultSet.getString("USER_ID");
+                        pstmt.setString(1,userId);     
+                        ResultSet resultSet2 = pstmt.executeQuery();
+                            
+                        
+                        System.out.printf("%-10s",userId);
+                        while(resultSet2.next()){
+                            String answerId = resultSet2.getString("ANSWER_ID");
+                            int answer2 = 0;
+                            switch (answerId) {
+                                case "A1":
+                                    answer2 = 1;
+                                    break;
+                                case "A2":
+                                    answer2 = 2;
+                                    break;
+                                case "A3":
+                                    answer2 = 3;
+                                    break;
+                                case "A4":
+                                    answer2 = 4;
+                                    break;
+                                case "A5":
+                                    answer2 = 5;
+                                    break;
+                                case "A6":
+                                    answer2 = 6;
+                                    break;                                    
+                                default:
+                                    break;
+                            }
+                            // System.out.print("             "+answer2);
+                            String format2 = "%-12d";
+                            System.out.printf(format2,answer2);
+                        }
+                        System.out.println();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }  
+                System.out.println();
             } else if (answer.equals("2")) {
                 
                 //아래는 예시
