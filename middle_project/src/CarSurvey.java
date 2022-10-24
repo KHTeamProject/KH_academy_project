@@ -111,14 +111,14 @@ public class CarSurvey { // 설문 및 아이디 비번
 
     public static void printAnswerList(Connection conn) {
         try {
-            // Statement는 여러번 사용할 수 있지만 printQuestion에 있는 stmt를 여기서 재사용하면 다음 문항이 출력 되지 않음
+            // printQuestion에 있는 stmt를 여기서 재사용하면 다음 문항이 출력 되지 않음
             // 따라서 새로운 Statement를 생성
             Statement stmt4ans = conn.createStatement();
 
             // 쿼리문 작성
             String query = "SELECT ANSWER FROM answer";
             ResultSet resultSet = stmt4ans.executeQuery(query);
-            
+
             // 답항 출력
             while (resultSet.next()) {
                 System.out.print(resultSet.getString("ANSWER") + " ");
