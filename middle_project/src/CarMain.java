@@ -35,6 +35,8 @@ public class CarMain { // 메인화면
                 } else if (choose.equalsIgnoreCase("Q")) {
                     System.out.println("이용해 주셔서 감사합니다!");
                     break;
+                } else {
+                    System.out.println("없는 메뉴 입니다. 다시 선택해주세요.");
                 }
             }
         } catch (Exception e) {
