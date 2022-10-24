@@ -28,7 +28,7 @@ public class CarMain { // 메인화면
                     cv.Survey(conn);
                 } else if (choose.equalsIgnoreCase("S")) {
                     CarStats cs = new CarStats();
-                    cs.stats();
+                    cs.stats(conn);
                 } else if (choose.equalsIgnoreCase("D")) {
                     CarDelete cd = new CarDelete();
                     cd.del();
