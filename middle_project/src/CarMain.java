@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CarMain {
+public class CarMain { // 메인화면
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -12,8 +12,8 @@ public class CarMain {
             String choose = sc.next();
 
             if (choose.equalsIgnoreCase("P")) {
-                CarView cv = new CarView();
-                cv.view();
+                CarSurvey cv = new CarSurvey();
+                cv.Survey();
             } else if (choose.equalsIgnoreCase("S")) {
                 CarStats cs = new CarStats();
                 cs.stats();
