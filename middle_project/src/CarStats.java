@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-
 public class CarStats { //통계 김용범 
     public void stats(Connection connection) {
         Scanner sc = new Scanner(System.in);
