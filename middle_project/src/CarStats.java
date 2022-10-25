@@ -56,7 +56,7 @@ public class CarStats { //통계 김용범
                 questionCount = Integer.parseInt(resultSet_QuestionCount.getString("COUNT(QUESTION_ID)"));
             }
 
-            for (int i = 0;i<questionCount;i++) { //Q1..Q6를 돌면서 각 질문에 대한 통계를 불러온다.
+            for (int i = 0;i<questionCount;i++) { //Q1..Qn를 돌면서 각 질문에 대한 통계를 불러온다.
                 String question = "Q"+(i+1);
                 preparedStatement.setString(1,question); //예시, 이번쿼리는 Q1,Q2.... 등 으로 설정한다.
                 preparedStatement.setString(2,question); 
@@ -73,7 +73,7 @@ public class CarStats { //통계 김용범
                     countA3 = resultSet.getInt("A3");
                     countA4 = resultSet.getInt("A4");
                     countA5 = resultSet.getInt("A5");
-                    System.out.printf(format2,"질문"+i,countA1,countA2,countA3,countA4,countA5);
+                    System.out.printf(format2,"질문"+(i+1),countA1,countA2,countA3,countA4,countA5);
                 }
             }
             System.out.println();
