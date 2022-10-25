@@ -28,16 +28,21 @@ public class CarStats { //통계 김용범
 
     //질문별 총 답변수
     public void answerStatistics(Connection connection){
+        System.out.println("<질문별 총 답변수>");
+        String format = "%-10s%-10s%-10s%-10s%-10s%-10s%%n";
+        System.out.printf(format,"ID)","답(1)","답(2)","답(3)","답(4)","답(5)");
 
-        
+
         //아래는 예시
         System.out.println("<질문별 총 답변수>");
         System.out.println();
-        System.out.println("ID)             답(1)       답(2)       답(3)       답(4)   답(5)   답(6)");
-        System.out.println("질문(1)       3           2           4           1      3         3");
-        System.out.println("질문(2)       1           2           4           3      2         2");
-        System.out.println("질문(3)       2           1           4           3      3         1");
-        System.out.println("질문(4)       4           3           1           2      3         2");
+        System.out.println("ID)           답(1)       답(2)       답(3)       답(4)   답(5)");
+        System.out.println("질문(1)       3           2           4           1       3");
+        System.out.println("질문(2)       1           2           4           3       2");
+        System.out.println("질문(3)       2           1           4           3       3");
+        System.out.println("질문(4)       4           3           1           2       3");
+        System.out.println("질문(5)       4           3           1           2       3");
+        System.out.println("질문(6)       4           3           1           2       3");
     }
 
     //id별 답변결과
