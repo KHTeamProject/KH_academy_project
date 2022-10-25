@@ -26,26 +26,25 @@ public class CarDelete { // 삭제
             while(resultSet.next()) {
                 userId = resultSet.getString("USER_ID");
                 userPw = resultSet.getString("USER_PW");
-                
-                System.out.print(userId+" ");
-                System.out.print(userPw+" ");
-                System.out.println();
-            }
-            
-            //삭제
-            deleteQueryUser = "DELETE FROM users WHERE USER_ID = "+"'"+userId+"'";
-            String deleteQueryUserAnswer = "DELETE FROM users_answer WHERE USER_ID = "+"'"+userId+"'";
-            if(uId.equals(userId) && uPw.equals(userPw) ) { // 일치 할시
+                deleteQueryUser = "DELETE FROM users WHERE USER_ID = "+"'"+userId+"'";
+                String deleteQueryUserAnswer = "DELETE FROM users_answer WHERE USER_ID = "+"'"+userId+"'";
+
+                if(uId.equals(userId) && uPw.equals(userPw) ) { // 일치 할시
                 // 설문삭제 코드
 
                 statement.execute(deleteQueryUserAnswer);
                 statement.execute(deleteQueryUser);
                 
              
-            System.out.println("설문이 삭제되었습니다.");
-            } else {
-            System.out.println("일치하지 않습니다.");
-            } 
+                System.out.println("설문이 삭제되었습니다.");
+                } else {
+                System.out.println("일치하지 않습니다.");
+                } 
+                
+            }
+            
+            //삭제
+            
 
         } catch (SQLException e) {
             e.printStackTrace();
