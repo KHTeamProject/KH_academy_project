@@ -83,16 +83,40 @@ public class CarStats { //통계 김용범
 
     //id별 답변결과
     public void answerById(Connection connection){
+        
+        //질문 숫자 세기
+        ResultSet resultSet_QuestionCount;
+        int questionCount = 0;
+        try {
+            Statement statement2 = connection.createStatement();
+            resultSet_QuestionCount = statement2.executeQuery("SELECT COUNT(QUESTION_ID) FROM question;");
+            while(resultSet_QuestionCount.next()) {
+                questionCount = Integer.parseInt(resultSet_QuestionCount.getString("COUNT(QUESTION_ID)"));
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        
+        //ID별 답변결과 상단 출력
         System.out.println("<ID별 답변 결과>");
-        String format = "%-10s%-10s%-10s%-10s%-10s%-10s%-10s%n";
-        System.out.printf(format,"ID)","질문(1)","질문(2)","질문(3)","질문(4)","질문(5)","질문(6)");
+        System.out.printf("%-10s","ID)");
+        
+        //질문수 만큼 질문1, 질문2... 출력하기
+        int i = 0; 
+        while(i<questionCount){
+            System.out.printf("%-10s","질문("+(i+1)+")");
+            i++;
+        }
+        System.out.println();
         
         try {
+            // user 목록 조회하기
             String query = "SELECT USER_ID FROM users";
             Statement statement = connection.createStatement();
             ResultSet resultSet;
             resultSet = statement.executeQuery(query);
 
+            // user별로 답변내용 조회준비
             String query_answer = "SELECT ANSWER_ID FROM users_answer WHERE USER_ID = ? ORDER BY QUESTION_ID";
             PreparedStatement pstmt = connection.prepareStatement(query_answer);
             
