@@ -28,20 +28,71 @@ public class CarStats { //통계 김용범
     //질문별 총 답변수
     public void answerStatistics(Connection connection){
         System.out.println("<질문별 총 답변수>");
-        String format = "%-10s%-10s%-10s%-10s%-10s%-10s%%n";
-        System.out.printf(format,"ID)","답(1)","답(2)","답(3)","답(4)","답(5)");
+        String format = "%-10s%-10s%-10s%-10s%-10s%-10s%n";
+        String format2 = "%-8s%-11s%-11s%-11s%-11s%-11s%n";
+        System.out.printf(format,"Question)","답(1)","답(2)","답(3)","답(4)","답(5)");
 
+        String query = "SELECT * "+
+                        "FROM (SELECT COUNT(ANSWER_ID) AS A1 FROM users_answer "+
+                            "WHERE QUESTION_ID=? AND ANSWER_ID = 'A1') AS A1"+
+                        "INNER JOIN (SELECT COUNT(ANSWER_ID) AS A2 FROM users_answer "+
+                                    "WHERE QUESTION_ID=? AND ANSWER_ID = 'A2') AS A2 "+
+                        "INNER JOIN (SELECT COUNT(ANSWER_ID) AS A3 FROM users_answer "+
+                                    "WHERE QUESTION_ID=? AND ANSWER_ID = 'A3') AS A3 "+
+                        "INNER JOIN (SELECT COUNT(ANSWER_ID) AS A4 FROM users_answer "+
+                                    "WHERE QUESTION_ID=? AND ANSWER_ID = 'A4') AS A4 "+
+                        "INNER JOIN (SELECT COUNT(ANSWER_ID) AS A5 FROM users_answer "+
+                                    "WHERE QUESTION_ID=? AND ANSWER_ID = 'A5') AS A5";
 
-        //아래는 예시
-        System.out.println("<질문별 총 답변수>");
-        System.out.println();
-        System.out.println("ID)           답(1)       답(2)       답(3)       답(4)   답(5)");
-        System.out.println("질문(1)       3           2           4           1       3");
-        System.out.println("질문(2)       1           2           4           3       2");
-        System.out.println("질문(3)       2           1           4           3       3");
-        System.out.println("질문(4)       4           3           1           2       3");
-        System.out.println("질문(5)       4           3           1           2       3");
-        System.out.println("질문(6)       4           3           1           2       3");
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            String[] questions = {"Q1","Q2","Q3","Q4","Q5","Q6"};
+            ResultSet resultSet;
+            
+            for (int i = 0;i<6;i++){ //Q1..Q6를 돌면서 각 질문에 대한 통계를 불러온다.
+                preparedStatement.setString(1,questions[i]);
+                preparedStatement.setString(2,questions[i]);
+                preparedStatement.setString(3,questions[i]);
+                preparedStatement.setString(4,questions[i]);
+                preparedStatement.setString(5,questions[i]);
+
+                resultSet = preparedStatement.executeQuery(); //
+
+                while(resultSet.next()){
+                    int countA1,countA2,countA3,countA4,countA5;
+                    countA1 = resultSet.getInt("A1");
+                    countA2 = resultSet.getInt("A2");
+                    countA3 = resultSet.getInt("A3");
+                    countA4 = resultSet.getInt("A4");
+                    countA5 = resultSet.getInt("A5");
+                    System.out.printf(format2,questionPrint(questions[i]),countA1,countA2,countA3,countA4,countA5);
+                }
+            }
+            System.out.println();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // "Q1"을 "질문1"로 바꿔주는 함수
+    public String questionPrint(String questions) {
+        switch(questions) {
+            case "Q1":
+                return "질문1";
+            case "Q2":
+                return "질문2";
+            case "Q3":
+                return "질문3";
+            case "Q4":
+                return "질문4";
+            case "Q5":
+                return "질문5";
+            case "Q6":
+                return "질문6";
+            default:
+                return "error";
+        }
     }
 
     //id별 답변결과
