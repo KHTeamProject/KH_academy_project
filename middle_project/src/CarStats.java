@@ -46,15 +46,23 @@ public class CarStats { //통계 김용범
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            String[] questions = {"Q1","Q2","Q3","Q4","Q5","Q6"};
             ResultSet resultSet;
             
-            for (int i = 0;i<6;i++){ //Q1..Q6를 돌면서 각 질문에 대한 통계를 불러온다.
-                preparedStatement.setString(1,questions[i]); //예시, 이번쿼리는 Q1,Q2.... 등 으로 설정한다.
-                preparedStatement.setString(2,questions[i]); 
-                preparedStatement.setString(3,questions[i]);
-                preparedStatement.setString(4,questions[i]);
-                preparedStatement.setString(5,questions[i]);
+            //질문 숫자 세기
+            Statement statement = connection.createStatement();
+            ResultSet resultSet_QuestionCount = statement.executeQuery("SELECT COUNT(QUESTION_ID) FROM question;");
+            int questionCount = 0;
+            while(resultSet_QuestionCount.next()) {
+                questionCount = Integer.parseInt(resultSet_QuestionCount.getString("COUNT(QUESTION_ID)"));
+            }
+
+            for (int i = 0;i<questionCount;i++) { //Q1..Q6를 돌면서 각 질문에 대한 통계를 불러온다.
+                String question = "Q"+(i+1);
+                preparedStatement.setString(1,question); //예시, 이번쿼리는 Q1,Q2.... 등 으로 설정한다.
+                preparedStatement.setString(2,question); 
+                preparedStatement.setString(3,question);
+                preparedStatement.setString(4,question);
+                preparedStatement.setString(5,question);
 
                 resultSet = preparedStatement.executeQuery(); //
 
@@ -65,33 +73,13 @@ public class CarStats { //통계 김용범
                     countA3 = resultSet.getInt("A3");
                     countA4 = resultSet.getInt("A4");
                     countA5 = resultSet.getInt("A5");
-                    System.out.printf(format2,questionPrint(questions[i]),countA1,countA2,countA3,countA4,countA5);
+                    System.out.printf(format2,"질문"+i,countA1,countA2,countA3,countA4,countA5);
                 }
             }
             System.out.println();
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-    }
-
-    // "Q1"을 "질문1"로 바꿔주는 함수
-    public String questionPrint(String questions) {
-        switch(questions) {
-            case "Q1":
-                return "질문1";
-            case "Q2":
-                return "질문2";
-            case "Q3":
-                return "질문3";
-            case "Q4":
-                return "질문4";
-            case "Q5":
-                return "질문5";
-            case "Q6":
-                return "질문6";
-            default:
-                return "error";
         }
     }
 
