@@ -122,13 +122,9 @@ public class CarStats { //통계 김용범
                         case "A5":
                             answer2 = 5;
                             break;
-                        case "A6":
-                            answer2 = 6;
-                            break;                                    
                         default:
                             break;
                     }
-                    // System.out.print("             "+answer2);
                     String format2 = "%-12d";
                     System.out.printf(format2,answer2);
                 }
