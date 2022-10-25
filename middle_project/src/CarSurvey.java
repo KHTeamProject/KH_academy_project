@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class CarSurvey { // 설문 및 아이디 비번
-    static Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     public void Survey(Connection conn) {
 
@@ -35,7 +35,7 @@ public class CarSurvey { // 설문 및 아이디 비번
 
     }
 
-    public static boolean checkDuplicate(String id, String pw, Connection conn) {
+    public boolean checkDuplicate(String id, String pw, Connection conn) {
         try {
             // 쿼리문 작성
             String query = "INSERT INTO users VALUES(?,?)";
@@ -54,7 +54,7 @@ public class CarSurvey { // 설문 및 아이디 비번
         return false;
     }
 
-    public static void printQuestion(Connection conn, String id) {
+    public void printQuestion(Connection conn, String id) {
         try {
             Statement stmt = conn.createStatement();
 
