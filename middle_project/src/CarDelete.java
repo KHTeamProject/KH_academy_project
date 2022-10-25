@@ -32,8 +32,7 @@ public class CarDelete { // 삭제
                 String deleteQueryUserAnswer = "DELETE FROM users_answer WHERE USER_ID = "+"'"+userId+"'";
 
 
-                if(uId.equals(userId) && uPw.equals(userPw)) { // 일치 할시
-                // 설문삭제 코드
+                if(uId.equals(userId) && uPw.equals(userPw)) { // 일치 할시 설문삭제 코드
 
                 statement2.execute(deleteQueryUserAnswer);
                 statement2.execute(deleteQueryUser);
@@ -45,13 +44,11 @@ public class CarDelete { // 삭제
 
                 } 
             }
-                if(fin == 0)
+                if(fin == 0) {
                 System.out.println("일치하지 않습니다.");
+                statement2.close();
+                }
 
-            
-            
-            //삭제
-            
 
         } catch (SQLException e) {
             e.printStackTrace();
