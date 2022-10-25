@@ -34,9 +34,9 @@ public class CarDelete { // 삭제
 
                     System.out.println("설문이 삭제되었습니다.");
                     correct = true;
+                    statement2.close();
                     if(correct == true)
                         break;
-                    statement2.close();
                     
                 }
 
