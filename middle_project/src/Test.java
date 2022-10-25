@@ -19,7 +19,6 @@ public class Test {
             int answerCount = 0;
             while(resultSet_AnswerCount.next()) {
                 answerCount = Integer.parseInt(resultSet_AnswerCount.getString("COUNT(ANSWER_ID)"));
-                System.out.println(answerCount);
             }
 
             //질문 숫자 세기
@@ -27,7 +26,6 @@ public class Test {
             int questionCount = 0;
             while(resultSet_QuestionCount.next()) {
                 questionCount = Integer.parseInt(resultSet_QuestionCount.getString("COUNT(QUESTION_ID)"));
-                System.out.println(questionCount);
             }
             
             String[][] result = new String[questionCount+1][answerCount+1];
@@ -49,11 +47,9 @@ public class Test {
             for(int i = 1 ; i<=questionCount ; i++) {
                 for(int j =1 ; j<=answerCount ; j++) {  
                     query = "SELECT COUNT(ANSWER_ID) FROM users_answer WHERE QUESTION_ID = "+"'"+"Q"+i+"'"+" AND ANSWER_ID = "+"'"+"A"+j+"'"+";";
-                    System.out.println(query);
                     ResultSet resultSet = statement.executeQuery(query);
                     String answer = " ";
                     while(resultSet.next()) {
-                        System.out.println(resultSet.getString("COUNT(ANSWER_ID)"));
                         answer = resultSet.getString("COUNT(ANSWER_ID)");
                     }
                     result[i][j] = "\t"+answer;
