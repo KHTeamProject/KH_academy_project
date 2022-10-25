@@ -50,15 +50,15 @@ public class CarStats { //통계 김용범
             ResultSet resultSet;
             
             for (int i = 0;i<6;i++){ //Q1..Q6를 돌면서 각 질문에 대한 통계를 불러온다.
-                preparedStatement.setString(1,questions[i]);
-                preparedStatement.setString(2,questions[i]);
+                preparedStatement.setString(1,questions[i]); //예시, 이번쿼리는 Q1,Q2.... 등 으로 설정한다.
+                preparedStatement.setString(2,questions[i]); 
                 preparedStatement.setString(3,questions[i]);
                 preparedStatement.setString(4,questions[i]);
                 preparedStatement.setString(5,questions[i]);
 
                 resultSet = preparedStatement.executeQuery(); //
 
-                while(resultSet.next()){
+                while(resultSet.next()) {
                     int countA1,countA2,countA3,countA4,countA5;
                     countA1 = resultSet.getInt("A1");
                     countA2 = resultSet.getInt("A2");
