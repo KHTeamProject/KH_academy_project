@@ -80,12 +80,11 @@ public class CarSurvey { // 설문 및 아이디 비번
                     System.out.print("답) ");
                     answer = sc.nextLine();
 
-                    // 답을 String으로 입력받았으나 비교를 쉽게 하기 위해 integer로 바꾼후 답항 범위를 벗어나면 다시 입력하도록 함
-                    if(Integer.parseInt(answer) <1 || Integer.parseInt(answer) >5){
-                        System.out.println("없는 답변 입니다. 다시 입력해주세요");
-                        continue;
+                    // 답항에 있는 문항인지 확인
+                    if(answer.equals("1") || answer.equals("2") || answer.equals("3") || answer.equals("4") || answer.equals("5")){
+                        break;
                     }
-                    break;
+                    System.out.println("없는 답변 입니다. 다시 입력해주세요");
                 }
 
                 // INSERT 쿼리문 작성
