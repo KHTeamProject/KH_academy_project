@@ -66,18 +66,16 @@ public class CarStats { //통계 김용범
 
                 resultSet = preparedStatement.executeQuery(); //
 
-                while(resultSet.next()) {
-                    int countA1,countA2,countA3,countA4,countA5;
-                    countA1 = resultSet.getInt("A1");
-                    countA2 = resultSet.getInt("A2");
-                    countA3 = resultSet.getInt("A3");
-                    countA4 = resultSet.getInt("A4");
-                    countA5 = resultSet.getInt("A5");
-                    System.out.printf(format2,"질문"+(i+1),countA1,countA2,countA3,countA4,countA5);
-                }
+                resultSet.next();
+                int countA1,countA2,countA3,countA4,countA5;
+                countA1 = resultSet.getInt("A1");
+                countA2 = resultSet.getInt("A2");
+                countA3 = resultSet.getInt("A3");
+                countA4 = resultSet.getInt("A4");
+                countA5 = resultSet.getInt("A5");
+                System.out.printf(format2,"질문"+(i+1),countA1,countA2,countA3,countA4,countA5);
             }
             System.out.println();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
