@@ -31,7 +31,7 @@ public class CarMain { // 메인화면
                     cs.stats(conn);
                 } else if (choose.equalsIgnoreCase("D")) {
                     CarDelete cd = new CarDelete();
-                    cd.del();
+                    cd.del(conn);
                 } else if (choose.equalsIgnoreCase("Q")) {
                     System.out.println("이용해 주셔서 감사합니다!");
                     break;
