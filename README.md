@@ -2,8 +2,8 @@
 
 ### 구성원
 PM : 길진수  
-member2 : 김용범  
-member3 : 김병근
+Member2 : 김용범  
+Member3 : 김병근
 
 ### ERD  
 ![ERD](./refers/KH_Project_erd/KH_Project.png)
