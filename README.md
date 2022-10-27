@@ -19,5 +19,6 @@ Member3 : 김병근
 김용범  
 - 사용자별 답변결과 및 각 문항별 답변 수 표시 : [통계 코드](./src/CarStats.java)
 
+
 길진수  
 - ID와 PW가 일치하면 설문지 삭제 : [삭제 코드](./src/CarDelete.java)
