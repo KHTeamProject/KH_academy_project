@@ -1,8 +1,8 @@
 # KH_academy_project - 끝까지 버팀
 
 ### 구성원
-PM : 길진수
-member2 : 김용범
+PM : 길진수  
+member2 : 김용범  
 member3 : 김병근
 
 ### ERD  
