@@ -14,8 +14,7 @@ Member3 : 김병근
 ### 소스코드
 김병근   
 입력값에 따라 설문지, 통계, 삭제로 이동 : [Main 코드](./src/CarMain.java)  
-
-회원가입 후 설문지 내용을 화면에 표시 : [설문지 코드](./src/CarSurvey.java),   
+회원가입 후 설문지 내용을 화면에 표시 : [설문지 코드](./src/CarSurvey.java)
 
 김용범  
 사용자별 답변결과 및 각문항별 답변 수 표시 : [통계 코드](./src/CarStats.java)
