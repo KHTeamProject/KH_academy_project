@@ -48,7 +48,7 @@ public class CarSurvey { // 설문 및 아이디 비번
             // 데이터 INSERT
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            // e.printStackTrace();
+            e.printStackTrace();
             return true;
         }
         return false;
@@ -81,7 +81,8 @@ public class CarSurvey { // 설문 및 아이디 비번
                     answer = sc.nextLine();
 
                     // 답항에 있는 문항인지 확인
-                    if(answer.equals("1") || answer.equals("2") || answer.equals("3") || answer.equals("4") || answer.equals("5")){
+                    if (answer.equals("1") || answer.equals("2") || answer.equals("3") || answer.equals("4")
+                            || answer.equals("5")) {
                         break;
                     }
                     System.out.println("없는 답변 입니다. 다시 입력해주세요");

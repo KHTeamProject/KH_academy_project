@@ -7,7 +7,7 @@ public class CarMain { // 메인화면
         Scanner sc = new Scanner(System.in);
 
         // database 접속
-        String url = "jdbc:mysql://localhost:3306/kh_project";
+        String url = "jdbc:mysql://localhost:3306/simple_tiltheend";
         String user = "root";
         String password = "*khacademy!";
         // database 지정
